@@ -18,7 +18,7 @@ function isAuthenticated(req, res, next) {
 
 /* GET home page. */
 router.get('/', isAuthenticated, (req, res) => {
-  res.render('/');
+  res.render('layout');
 });
 
 router.get('/icons', isAuthenticated, (req, res) => {
