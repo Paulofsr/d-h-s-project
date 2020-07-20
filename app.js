@@ -27,7 +27,7 @@ if (process.env.REDIS_PASSWORD) {
 
 const redisStore = new RedisStore(redisStoreConfig);
 
-const staticFolder = process.env.NODE_ENV === 'development' ? 'public' : 'dist';
+const staticFolder = process.env.NODE_ENV === 'development' ? 'public' : 'public';
 const app = express();
 
 // view engine setup
