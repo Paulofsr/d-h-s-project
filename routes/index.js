@@ -9,16 +9,16 @@ const mountResetPasswordRoutes = require('../features/reset-password/routes');
 const mountProfileRoutes = require('../features/profile/routes');
 
 function isAuthenticated(req, res, next) {
-  if (req.user && req.isAuthenticated()) {
+  // if (req.user && req.isAuthenticated()) {
     return next();
-  }
+  // }
 
-  return res.redirect('/login');
+  // return res.redirect('/login');
 }
 
 /* GET home page. */
 router.get('/', isAuthenticated, (req, res) => {
-  res.render('pages/dashboard');
+  res.render('/');
 });
 
 router.get('/icons', isAuthenticated, (req, res) => {

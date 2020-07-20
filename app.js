@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 
-const initAuthMiddleware = require('./features/login/init-auth-middleware');
+// const initAuthMiddleware = require('./features/login/init-auth-middleware');
 const indexRouter = require('./routes/index');
 
 const redisStoreConfig = {
@@ -56,7 +56,7 @@ app.use(
   })
 );
 
-initAuthMiddleware(app);
+// initAuthMiddleware(app);
 
 // Middleware used for setting error and success messages as available in _ejs_ templates
 app.use((req, res, next) => {
