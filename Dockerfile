@@ -1,11 +1,16 @@
-FROM nginx:1.18.0-alpine
+FROM alpine:3.6
 
 RUN apk update && \
-    apk add openssl&& \
+    apk add nodejs && \
+    apk add nodejs-npm && \
     mkdir /app
-    
-COPY ./nginx/default.conf ./etc/nginx/conf.d
 
-COPY ./web-project /app
+WORKDIR /app
+
+COPY . .
+
+RUN npm i 
 
 EXPOSE 80
+
+CMD [ "npm", "start" ]
